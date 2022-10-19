@@ -1,0 +1,6 @@
+
+com.google.inject guice jar s/.*/debian/ s/no_aop// *
+junit junit jar s/4\..*/4.x/ * *
+org.yaml snakeyaml bundle s/1\..*/1.x/ * *
+org.yaml snakeyaml s/jar/bundle/ s/1\..*/1.x/ * *
+s/ant/org.apache.ant/ * * s/.*/debian/ * *

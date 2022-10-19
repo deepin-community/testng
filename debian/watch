@@ -1,0 +1,4 @@
+version=3
+opts=dversionmangle=s/(\d)[\+\.](?:dfsg|debian|ds)\.?\d*$/$1/ \
+https://github.com/cbeust/testng/tags \
+.*/archive/(\d\S*)\.tar\.gz debian jh_repack

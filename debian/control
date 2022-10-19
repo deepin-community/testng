@@ -1,0 +1,43 @@
+Source: testng
+Section: java
+Priority: optional
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders: Eugene Zhukov <eugene@debian.org>
+Build-Depends:
+ ant,
+ debhelper (>= 11~),
+ default-jdk,
+ junit4,
+ libbsh-java,
+ libbuild-helper-maven-plugin-java,
+ libguice-java,
+ libjcommander-java,
+ libmaven-bundle-plugin-java,
+ libyaml-snake-java,
+ maven-debian-helper
+Standards-Version: 4.1.5
+Vcs-Git: https://salsa.debian.org/java-team/testng.git
+Vcs-Browser: https://salsa.debian.org/java-team/testng
+Homepage: http://testng.org
+
+Package: testng
+Architecture: all
+Depends: ${maven:Depends}, ${misc:Depends}
+Recommends: ${maven:OptionalDepends}
+Description: testing framework for Java
+ TestNG is a testing framework inspired from JUnit and NUnit but introducing
+ some new functionalities that make it more powerful and easier to use, such as:
+  * Annotations.
+  * Run your tests in arbitrarily big thread pools with various policies
+    available (all methods in their own thread, one thread per test class, etc.)
+  * Test that your code is multithread safe.
+  * Flexible test configuration.
+  * Support for data-driven testing (with @DataProvider).
+  * Support for parameters.
+  * Powerful execution model (no more TestSuite).
+  * Supported by a variety of tools and plug-ins (Eclipse, IDEA, Maven, etc.)
+  * Embeds BeanShell for further flexibility.
+  * Default JDK functions for runtime and logging (no dependencies).
+  * Dependent methods for application server testing.
+ TestNG is designed to cover all categories of tests:
+ unit, functional, end-to-end, integration, etc.

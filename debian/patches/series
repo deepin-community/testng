@@ -1,0 +1,2 @@
+version_java.patch
+remove-guava-dependency-pr1086.patch

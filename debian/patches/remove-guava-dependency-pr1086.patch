@@ -1,0 +1,56 @@
+From deeb5847282ae3b5b185c046a8146814bf98b124 Mon Sep 17 00:00:00 2001
+From: Julien Herr <julien@herr.fr>
+Date: Thu, 7 Jul 2016 23:04:24 +0200
+Subject: [PATCH] Fix #1085 Remove Guava dependency
+
+---
+ .../internal/annotations/JDK15TagFactory.java |  2 +-
+ .../org/testng/internal/collections/Ints.java | 19 +++++++++++++++++++
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 src/main/java/org/testng/internal/collections/Ints.java
+
+diff --git a/src/main/java/org/testng/internal/annotations/JDK15TagFactory.java b/src/main/java/org/testng/internal/annotations/JDK15TagFactory.java
+index 7e79166d1..7ed9cc19e 100755
+--- a/src/main/java/org/testng/internal/annotations/JDK15TagFactory.java
++++ b/src/main/java/org/testng/internal/annotations/JDK15TagFactory.java
+@@ -6,7 +6,6 @@
+ import java.util.List;
+ import java.util.Set;
+ 
+-import com.google.common.primitives.Ints;
+ import org.testng.IAnnotationTransformer;
+ import org.testng.TestNGException;
+ import org.testng.annotations.AfterClass;
+@@ -37,6 +36,7 @@
+ import org.testng.annotations.Test;
+ import org.testng.collections.Lists;
+ import org.testng.internal.Utils;
++import org.testng.internal.collections.Ints;
+ 
+ /**
+  * This class creates implementations of IAnnotations based on the JDK5
+diff --git a/src/main/java/org/testng/internal/collections/Ints.java b/src/main/java/org/testng/internal/collections/Ints.java
+new file mode 100644
+index 000000000..1194230f6
+--- /dev/null
++++ b/src/main/java/org/testng/internal/collections/Ints.java
+@@ -0,0 +1,19 @@
++package org.testng.internal.collections;
++
++import java.util.ArrayList;
++import java.util.List;
++
++public final class Ints {
++
++    private Ints() {
++        throw new Error();
++    }
++
++    public static List<Integer> asList(int... ints) {
++        ArrayList<Integer> result = new ArrayList<>(ints.length);
++        for (int val : ints) {
++            result.add(val);
++        }
++        return result;
++    }
++}

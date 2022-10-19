@@ -1,0 +1,15 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: TestNG
+Source: http://testng.org
+
+Files: *
+Copyright: 2013, Cedric Beust
+License: Apache-2.0
+
+Files: debian/*
+Copyright: 2013, Eugene Zhukov <jevgeni.zh@gmail.com>
+License: Apache-2.0
+
+License: Apache-2.0
+ On Debian systems, the full text of the Apache-2.0 license
+ can be found in the file '/usr/share/common-licenses/Apache-2.0'

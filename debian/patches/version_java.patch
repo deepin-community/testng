@@ -1,0 +1,18 @@
+Description: Adds a version implementation
+ * Adds Version.java file, which in upstream implementation is managed by
+   copy-rename-maven-plugin.
+
+Author: Eugene Zhukov <jevgeni.zh@gmail.com>
+
+--- /dev/null
++++ b/src/main/java/org/testng/internal/Version.java
+@@ -0,0 +1,9 @@
++package org.testng.internal;
++
++public class Version {
++  public static final String VERSION = "6.9.10";
++
++  public static void displayBanner() {
++    System.out.println("...\n... TestNG " + VERSION + " by Cédric Beust (cedric@beust.com)\n...\n");
++  }
++}
